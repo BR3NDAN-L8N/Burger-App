@@ -2,14 +2,14 @@
 const DB = require("../config/orm");
 
 var burger = {
-  all: function(cb) {
-    orm.all("burgers", function(res) {
+    selectAll: function(cb) {
+    orm.selectAll("burgers", function(res) {
       cb(res);
     });
   },
   // The variables cols and vals are arrays.
-  create: function(cols, vals, cb) {
-    orm.create("burgers", cols, vals, function(res) {
+  insertInto: function(cols, vals, cb) {
+    orm.insertInto("burgers", cols, vals, function(res) {
       cb(res);
     });
   },
@@ -18,8 +18,8 @@ var burger = {
       cb(res);
     });
   },
-  delete: function(condition, cb) {
-    orm.delete("burgers", condition, function(res) {
+  deleteFrom: function(condition, cb) {
+    orm.deleteFrom("burgers", condition, function(res) {
       cb(res);
     });
   }
