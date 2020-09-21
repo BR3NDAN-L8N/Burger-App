@@ -9,7 +9,7 @@ const connection = require("./connection");
 function printQuestionMarks(num) {
   const arr = [];
 
-  for (const i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     arr.push("?");
   }
 
@@ -21,7 +21,7 @@ function objToSql(ob) {
   const arr = [];
 
   // loop through the keys and push the key/value as a string int arr
-  for (const key in ob) {
+  for (let key in ob) {
     const value = ob[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
@@ -31,7 +31,7 @@ function objToSql(ob) {
       }
       // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
       // e.g. {sleepy: true} => ["sleepy=true"]
-      arr.push(`"${key}=${value}"`);
+      arr.push(`${key}=${value}`);
       
     }
   }
@@ -54,6 +54,7 @@ const orm = {
   insertInto: function(table, cols, vals, cb) {
     let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)}) `;
 
+
     console.log(queryString);
 
     connection.query(queryString, vals, function(err, result) {
@@ -66,7 +67,7 @@ const orm = {
   },
   // An example of objColVals would be {name: panther, sleepy: true}
   update: function(table, objColVals, condition, cb) {
-    const queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
+    const queryString = `UPDATE burger_db.${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
 
     console.log(queryString);
     connection.query(queryString, function(err, result) {

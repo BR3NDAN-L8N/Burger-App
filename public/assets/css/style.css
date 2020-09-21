@@ -1,20 +1,88 @@
+:root {
+  --color-main: #ed1b24;
+  --color-secondary: #ffd900;
+  --color-tertiary: #3760e6;
+  --color-tertiary2: white;
+
+}
+
+* {
+  box-sizing: border-box;
+  /*This makes the Padding and Border be included in the total Height and Width of an element.*/
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Anton', sans-serif;
+  background-color: var(--color-tertiary2);
+}
+
+main {
+}
+
+header {
+  background-color: var(--color-main);
+  color: var(--color-tertiary2);
+}
+
+header.hero-header {
+  width: 100%;
+}
+
+.hero-image {
+  height: 100vh;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+h1 {
+  text-align: center;
+}
+h1, h2 {
+  margin: 25px 0px;
+}
+h2 {
+  text-decoration-line: underline;
+  margin-right: 10vw;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.red-border {
+  min-width: 300px;
+  max-width: 800px;
+  border: 3px solid var(--color-main);
+  border-radius: 5px;
+  margin: 10px auto;
+
+}
+
+button {
+  background-color: var(--color-main);
+  color: var(--color-secondary);
+}
+
 li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
-  
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
