@@ -30,20 +30,22 @@
   ## Finished Project
   
   <!-- Add deployed link when available -->
-  [Deployed Project](http://www.example.com) 
+  [Deployed Project](https://salty-garden-94216.herokuapp.com/) 
   
   ## Project Demo
   
   undefined
-  ![Screenshot](./Assets/screenshot.png)
+  ![Screenshot](./public/assets/img/screencapture.png)
 
   ## Built With
 
-  undefined
+  * Node.js
+  * MySQL
+  * Handlebars
 
   # Usage
 
-  Update Later
+  Implementing SQL in an application for learning purposes.
 
   # License
   
